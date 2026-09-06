@@ -1,0 +1,78 @@
+{
+  "proxygonka-deepseek": {
+    "attempts": 25,
+    "success": 8,
+    "failures": 17,
+    "fail_pct": 68.0,
+    "fail_reasons": {
+      "timeout": 17
+    },
+    "latency_ms_success_only": {
+      "p50": 71.5,
+      "min": 7,
+      "max": 8706
+    },
+    "ttft_ms_success_only": {
+      "p50": 64.0,
+      "min": 6,
+      "max": 1252
+    }
+  },
+  "gonkaapiorg-deepseek": {
+    "attempts": 25,
+    "success": 16,
+    "failures": 9,
+    "fail_pct": 36.0,
+    "fail_reasons": {
+      "timeout": 9
+    },
+    "latency_ms_success_only": {
+      "p50": 726.5,
+      "min": 496,
+      "max": 13383
+    },
+    "ttft_ms_success_only": {
+      "p50": 698.5,
+      "min": 454,
+      "max": 10526
+    }
+  },
+  "eterial-deepseek": {
+    "attempts": 25,
+    "success": 13,
+    "failures": 12,
+    "fail_pct": 48.0,
+    "fail_reasons": {
+      "timeout": 12
+    },
+    "latency_ms_success_only": {
+      "p50": 74,
+      "min": 55,
+      "max": 2083
+    },
+    "ttft_ms_success_only": {
+      "p50": 49,
+      "min": 40,
+      "max": 2073
+    }
+  },
+  "deepinfra-deepseek": {
+    "attempts": 25,
+    "success": 24,
+    "failures": 1,
+    "fail_pct": 4.0,
+    "fail_reasons": {
+      "timeout": 1
+    },
+    "latency_ms_success_only": {
+      "p50": 5648.5,
+      "min": 492,
+      "max": 12782
+    },
+    "ttft_ms_success_only": {
+      "p50": 432.5,
+      "min": 253,
+      "max": 3136
+    }
+  }
+}

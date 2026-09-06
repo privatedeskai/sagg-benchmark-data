@@ -1,0 +1,52 @@
+{
+    "request_id": "68d107e79328b552",
+    "client_id": "client_alpha",
+    "line": "standard",
+    "started_at": "2026-09-05T19:19:49.446890979Z",
+    "steps": [
+        {
+            "step": "tier_attempt_start",
+            "timestamp": "2026-09-05T19:19:49.446914664Z",
+            "elapsed_ms": 0,
+            "detail": {
+                "provider": "proxygonka-deepseek",
+                "tier": "primary",
+                "tier_index": 1
+            }
+        },
+        {
+            "step": "tier_attempt_result",
+            "timestamp": "2026-09-05T19:19:52.448086904Z",
+            "elapsed_ms": 3001,
+            "detail": {
+                "error": "Post \"https://api.proxy.gonka.gg/v1/chat/completions\": context deadline exceeded",
+                "outcome": "connection_error",
+                "phase": "pre_generation",
+                "provider": "proxygonka-deepseek",
+                "tier": "primary"
+            }
+        },
+        {
+            "step": "tier_attempt_start",
+            "timestamp": "2026-09-05T19:19:52.448097885Z",
+            "elapsed_ms": 3001,
+            "detail": {
+                "provider": "eterial-deepseek",
+                "tier": "backup",
+                "tier_index": 2
+            }
+        },
+        {
+            "step": "tier_attempt_result",
+            "timestamp": "2026-09-05T19:19:54.66326626Z",
+            "elapsed_ms": 5216,
+            "detail": {
+                "outcome": "success",
+                "provider": "eterial-deepseek",
+                "tier": "backup"
+            }
+        }
+    ],
+    "final_outcome": "success",
+    "total_ms": 5216
+}

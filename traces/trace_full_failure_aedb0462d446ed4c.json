@@ -1,0 +1,76 @@
+{
+    "request_id": "aedb0462d446ed4c",
+    "client_id": "trace-examples-client",
+    "line": "trace-examples-smoke",
+    "started_at": "2026-09-05T19:23:33.62437001Z",
+    "steps": [
+        {
+            "step": "tier_attempt_start",
+            "timestamp": "2026-09-05T19:23:33.624396802Z",
+            "elapsed_ms": 0,
+            "detail": {
+                "provider": "fake-tier1",
+                "tier": "primary",
+                "tier_index": 1
+            }
+        },
+        {
+            "step": "tier_attempt_result",
+            "timestamp": "2026-09-05T19:23:33.625256202Z",
+            "elapsed_ms": 0,
+            "detail": {
+                "error": "Post \"http://127.0.0.1:1/v1/chat/completions\": dial tcp 127.0.0.1:1: connect: connection refused",
+                "outcome": "connection_error",
+                "phase": "pre_generation",
+                "provider": "fake-tier1",
+                "tier": "primary"
+            }
+        },
+        {
+            "step": "tier_attempt_start",
+            "timestamp": "2026-09-05T19:23:33.625264597Z",
+            "elapsed_ms": 0,
+            "detail": {
+                "provider": "fake-tier2",
+                "tier": "backup",
+                "tier_index": 2
+            }
+        },
+        {
+            "step": "tier_attempt_result",
+            "timestamp": "2026-09-05T19:23:33.625942064Z",
+            "elapsed_ms": 1,
+            "detail": {
+                "error": "Post \"http://127.0.0.1:2/v1/chat/completions\": dial tcp 127.0.0.1:2: connect: connection refused",
+                "outcome": "connection_error",
+                "phase": "pre_generation",
+                "provider": "fake-tier2",
+                "tier": "backup"
+            }
+        },
+        {
+            "step": "tier_attempt_start",
+            "timestamp": "2026-09-05T19:23:33.625948054Z",
+            "elapsed_ms": 1,
+            "detail": {
+                "provider": "fake-tier3",
+                "tier": "backup",
+                "tier_index": 3
+            }
+        },
+        {
+            "step": "tier_attempt_result",
+            "timestamp": "2026-09-05T19:23:33.626505838Z",
+            "elapsed_ms": 2,
+            "detail": {
+                "error": "Post \"http://127.0.0.1:3/v1/chat/completions\": dial tcp 127.0.0.1:3: connect: connection refused",
+                "outcome": "connection_error",
+                "phase": "pre_generation",
+                "provider": "fake-tier3",
+                "tier": "backup"
+            }
+        }
+    ],
+    "final_outcome": "all_providers_exhausted",
+    "total_ms": 2
+}

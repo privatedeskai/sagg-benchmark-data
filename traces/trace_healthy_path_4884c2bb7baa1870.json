@@ -1,0 +1,30 @@
+{
+    "request_id": "4884c2bb7baa1870",
+    "client_id": "client_alpha",
+    "line": "standard",
+    "started_at": "2026-09-05T19:19:55.540794721Z",
+    "steps": [
+        {
+            "step": "tier_attempt_start",
+            "timestamp": "2026-09-05T19:19:55.540865709Z",
+            "elapsed_ms": 0,
+            "detail": {
+                "provider": "proxygonka-deepseek",
+                "tier": "primary",
+                "tier_index": 1
+            }
+        },
+        {
+            "step": "tier_attempt_result",
+            "timestamp": "2026-09-05T19:19:55.573774878Z",
+            "elapsed_ms": 32,
+            "detail": {
+                "outcome": "success",
+                "provider": "proxygonka-deepseek",
+                "tier": "primary"
+            }
+        }
+    ],
+    "final_outcome": "success",
+    "total_ms": 33
+}

@@ -1,0 +1,74 @@
+{
+    "request_id": "097c128a313f865f",
+    "client_id": "client_alpha",
+    "line": "standard",
+    "started_at": "2026-09-05T19:19:33.059865758Z",
+    "steps": [
+        {
+            "step": "tier_attempt_start",
+            "timestamp": "2026-09-05T19:19:33.059911467Z",
+            "elapsed_ms": 0,
+            "detail": {
+                "provider": "proxygonka-deepseek",
+                "tier": "primary",
+                "tier_index": 1
+            }
+        },
+        {
+            "step": "tier_attempt_result",
+            "timestamp": "2026-09-05T19:19:36.060903032Z",
+            "elapsed_ms": 3001,
+            "detail": {
+                "error": "Post \"https://api.proxy.gonka.gg/v1/chat/completions\": context deadline exceeded",
+                "outcome": "connection_error",
+                "phase": "pre_generation",
+                "provider": "proxygonka-deepseek",
+                "tier": "primary"
+            }
+        },
+        {
+            "step": "tier_attempt_start",
+            "timestamp": "2026-09-05T19:19:36.060918162Z",
+            "elapsed_ms": 3001,
+            "detail": {
+                "provider": "eterial-deepseek",
+                "tier": "backup",
+                "tier_index": 2
+            }
+        },
+        {
+            "step": "tier_attempt_result",
+            "timestamp": "2026-09-05T19:19:48.062407348Z",
+            "elapsed_ms": 15002,
+            "detail": {
+                "error": "Post \"https://chat.eterial.ai/v1/chat/completions\": context deadline exceeded",
+                "outcome": "connection_error",
+                "phase": "pre_generation",
+                "provider": "eterial-deepseek",
+                "tier": "backup"
+            }
+        },
+        {
+            "step": "tier_attempt_start",
+            "timestamp": "2026-09-05T19:19:48.062424802Z",
+            "elapsed_ms": 15002,
+            "detail": {
+                "provider": "deepinfra-deepseek",
+                "tier": "backup",
+                "tier_index": 3
+            }
+        },
+        {
+            "step": "tier_attempt_result",
+            "timestamp": "2026-09-05T19:19:48.498630569Z",
+            "elapsed_ms": 15438,
+            "detail": {
+                "outcome": "success",
+                "provider": "deepinfra-deepseek",
+                "tier": "backup"
+            }
+        }
+    ],
+    "final_outcome": "success",
+    "total_ms": 15439
+}
