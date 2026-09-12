@@ -11,7 +11,18 @@ projected, simulated, or smoothed. Where a result was noisy or a finding
 was unflattering (a provider's own failure rate, a gateway-only loss), it
 is reported as measured.
 
-## Headline result
+**Update, 2026-09-12**: several real reliability fixes landed in the
+gateway since the campaigns below were run (a per-request dynamic timeout,
+a cascade-order fix, improved stream-completion logging). A new,
+separate measurement taken after those fixes - across both pricing
+lines and light/heavy prompt loads - is in
+[`2026-09-12-postfix/`](2026-09-12-postfix/): **~98% success (652/667)**,
+median time-to-first-token ~10-13ms (light) to ~240-280ms (heavy). This
+does not replace the numbers below - both are kept, dated, so nothing is
+quietly swapped out; see that folder's own README for the full
+methodology difference and two disclosed findings from that run.
+
+## Headline result (Phase 3, 2026-09-03/05 - historical baseline)
 
 Over 1,440 paired requests (same prompt, same instant, one request sent
 directly to `proxygonka-deepseek`, one sent through the SAGG gateway),
@@ -36,6 +47,13 @@ window - see below.
 
 ## What's in this repo
 
+- **`2026-09-12-postfix/`** - the current baseline: 5 test runs (Standard
+  + Super Deal, light + heavy prompt loads, plus a direct-provider
+  snapshot) taken after this session's own reliability fixes, with a
+  dependency-free reproduction script and two disclosed findings from
+  that run. Read this folder's own README before comparing its numbers
+  to Phase 3 below - different date, different code, different
+  methodology (unpaired 4-concurrent-legs, not paired direct-vs-gateway).
 - **`phase3/`** - the large campaign: 1,440 paired requests (Standard +
   Super Deal, alternating), 3 days, `results_phase3.jsonl` (raw,
   request-level records) and the full generated report with a per-pair
@@ -69,6 +87,7 @@ something is wrong (with this repo, or tell us and we'll look).
 
 - Phase 3 campaign: 2026-09-03 15:49 UTC - 2026-09-05 03:18 UTC.
 - Provider benchmark: 2026-09-05 (~12:00-12:35 UTC).
+- Post-fix update: 2026-09-12 (~06:41 UTC - 20:12 UTC, five separate runs - see `2026-09-12-postfix/README.md` for exact windows per file).
 
 Reliability on a decentralized inference network moves fast - see
 METHODOLOGY.md's "a snapshot, not a constant" note before treating any

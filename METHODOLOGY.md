@@ -93,3 +93,26 @@ hour later in either direction.
 - The absolute failure-rate numbers (36.2%, 27.3%, etc.) are specific to
   this SLA, this prompt mix, and this time window - they are not a
   universal "Gonka network uptime" figure.
+
+## 2026-09-12 update: a different methodology, a different SLA
+
+Everything above describes Phase 3 and the provider benchmark
+(2026-09-03/05). `2026-09-12-postfix/` uses a materially different
+design, documented in full in that folder's own README, summarized here
+for anyone reading this file first:
+
+- **No pairing, so no McNemar's test.** Each round fires the gateway leg
+  plus its own underlying providers concurrently (not one direct leg
+  paired against one gateway leg) - a straightforward per-leg failure
+  rate and TTFT distribution, not a matched-pair significance test.
+- **A dynamic SLA, not a flat 15 seconds.** The cutoff for "stalled" is
+  now `15s + max_tokens / 8.92 tokens/sec`, scaled to how much output the
+  request actually asked for - the flat 15s cutoff used everywhere above
+  was producing false "timeouts" on long, legitimately-still-generating
+  responses once heavier prompts were tested.
+
+Numbers from the two eras are not directly comparable as a before/after
+delta because of these differences, on top of the underlying gateway
+code itself having changed - each should be read as its own honest
+snapshot of its own window, per the "snapshot, not a constant" principle
+above.
