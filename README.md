@@ -11,6 +11,17 @@ projected, simulated, or smoothed. Where a result was noisy or a finding
 was unflattering (a provider's own failure rate, a gateway-only loss), it
 is reported as measured.
 
+**Update, 2026-09-18 (current headline figure)**: the largest sample to
+date - **1,000 real sequential requests per line**, measured after this
+session's own connection-pooling fix and a Tier1 provider recovery, is in
+[`2026-09-18-1000-per-line/`](2026-09-18-1000-per-line/): **Standard
+1,000/1,000 (100.0%)**, **Super Deal 989/1,000 (98.9%)**, median
+time-to-first-token 197ms/216ms. This is now the number quoted first on
+the public `/benchmarks` page. See that folder's own README for the full
+methodology (three separate clean-condition windows pooled together, no
+paired direct-comparison leg this time, and an honestly disclosed
+network-origin nuance for one of the three windows).
+
 **Update, 2026-09-12**: several real reliability fixes landed in the
 gateway since the campaigns below were run (a per-request dynamic timeout,
 a cascade-order fix, improved stream-completion logging). A new,
@@ -47,7 +58,13 @@ window - see below.
 
 ## What's in this repo
 
-- **`2026-09-12-postfix/`** - the current baseline: 5 test runs (Standard
+- **`2026-09-18-1000-per-line/`** - the current headline figure: 1,000
+  requests per line pooled from three separate clean-condition windows,
+  taken after the connection-pooling fix and a Tier1 provider recovery,
+  with a dependency-free reproduction script. Read this folder's own
+  README first - it has no paired direct-comparison leg, unlike the two
+  entries below.
+- **`2026-09-12-postfix/`** - the prior baseline: 5 test runs (Standard
   + Super Deal, light + heavy prompt loads, plus a direct-provider
   snapshot) taken after this session's own reliability fixes, with a
   dependency-free reproduction script and two disclosed findings from
