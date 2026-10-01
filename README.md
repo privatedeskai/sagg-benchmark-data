@@ -11,12 +11,28 @@ projected, simulated, or smoothed. Where a result was noisy or a finding
 was unflattering (a provider's own failure rate, a gateway-only loss), it
 is reported as measured.
 
-**Update, 2026-09-18 (current headline figure)**: the largest sample to
+**Update, 2026-09-30 (recheck, not a new headline figure)**: a short,
+200-request-per-line confirmation check two weeks after the 2026-09-18
+baseline, given real changes on the Gonka network in the interim, is in
+[`2026-09-30-recheck-200-per-line/`](2026-09-30-recheck-200-per-line/):
+**Standard 199/200 (99.5%)**, **Super Deal 198/200 (99.0%)** - success
+rate still consistent with the baseline. One honestly disclosed finding,
+not smoothed over: Standard's Primary-tier (`joingonka-deepseek`) share
+dropped to **80.4%** (from 94.5% on 2026-09-18), traced to a real,
+if not severe, uptick in connection-level timeouts to that provider that
+day - the cascade's backup tiers absorbed it correctly, overall success
+stayed high. Super Deal did not show the same drop. Does not replace the
+2026-09-18 baseline as the headline figure (n=200/line is a quick check,
+not the same statistical weight) - see that folder's own README for the
+full honest caveats (a different, heavier prompt bank than the baseline
+used, among others).
+
+**Update, 2026-09-18 (headline figure)**: the largest sample to
 date - **1,000 real sequential requests per line**, measured after this
 session's own connection-pooling fix and a Tier1 provider recovery, is in
 [`2026-09-18-1000-per-line/`](2026-09-18-1000-per-line/): **Standard
 1,000/1,000 (100.0%)**, **Super Deal 989/1,000 (98.9%)**, median
-time-to-first-token 197ms/216ms. This is now the number quoted first on
+time-to-first-token 197ms/216ms. This is the number quoted first on
 the public `/benchmarks` page. See that folder's own README for the full
 methodology (three separate clean-condition windows pooled together, no
 paired direct-comparison leg this time, and an honestly disclosed
@@ -58,6 +74,11 @@ window - see below.
 
 ## What's in this repo
 
+- **`2026-09-30-recheck-200-per-line/`** - a short, 200-request-per-line
+  confirmation check two weeks after the headline figure below, not a
+  replacement for it. Confirms success rate held (99.5%/99.0%); honestly
+  discloses one real finding (Standard's Primary-tier share dropped to
+  80.4% that day, traced to real connection timeouts).
 - **`2026-09-18-1000-per-line/`** - the current headline figure: 1,000
   requests per line pooled from three separate clean-condition windows,
   taken after the connection-pooling fix and a Tier1 provider recovery,
