@@ -1,3 +1,5 @@
+> **OUTDATED - read this first.** This document describes an older gateway version measured in September 2026. The current figures (version R1, 24 hours, 2026-10-23/24) are in `2026-10-24-R1-24h/` and in the top-level README. Time-to-first-token medians here include a response-cache effect. Provider names below are historical. Kept as published, dated, not edited.
+
 # Real request traces
 
 Raw output of SAGG's own per-request tracing tool

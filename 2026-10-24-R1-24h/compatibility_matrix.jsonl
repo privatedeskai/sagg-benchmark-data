@@ -1,0 +1,120 @@
+{"scenario": "T1", "target": "std/normal", "stream": true, "ok": true, "note": "ok (1 call, 0.6s)"}
+{"scenario": "T1", "target": "std/normal", "stream": false, "ok": true, "note": "ok (1 call, 11.0s)"}
+{"scenario": "T1", "target": "std/fast", "stream": true, "ok": true, "note": "ok (2 calls, 1.5s)"}
+{"scenario": "T1", "target": "std/fast", "stream": false, "ok": true, "note": "ok (2 calls, 8.3s)"}
+{"scenario": "T1", "target": "sd/normal", "stream": true, "ok": true, "note": "ok (1 call, 0.1s)"}
+{"scenario": "T1", "target": "sd/normal", "stream": false, "ok": true, "note": "ok (1 call, 10.2s)"}
+{"scenario": "T1", "target": "sd/fast", "stream": true, "ok": true, "note": "ok (2 calls, 0.1s)"}
+{"scenario": "T1", "target": "sd/fast", "stream": false, "ok": true, "note": "ok (1 call, 10.8s)"}
+{"scenario": "T2", "target": "std/normal", "stream": true, "ok": false, "note": "no tool_calls (finish=stop, content='Hello! How can I help you today? I can check the weather for')"}
+{"scenario": "T2", "target": "std/normal", "stream": false, "ok": false, "note": "no tool_calls (finish=stop, content='Hello! How can I help you today? I can check the weather for')"}
+{"scenario": "T2", "target": "std/fast", "stream": true, "ok": true, "note": "ok (2 calls, 2.2s)"}
+{"scenario": "T2", "target": "std/fast", "stream": false, "ok": true, "note": "ok (2 calls, 1.3s)"}
+{"scenario": "T2", "target": "sd/normal", "stream": true, "ok": false, "note": "no tool_calls (finish=stop, content='Hello! How can I help you today? I can check the weather for')"}
+{"scenario": "T2", "target": "sd/normal", "stream": false, "ok": false, "note": "no tool_calls (finish=stop, content='Hello! How can I help you today? I can check the weather for')"}
+{"scenario": "T2", "target": "sd/fast", "stream": true, "ok": true, "note": "ok (2 calls, 0.1s)"}
+{"scenario": "T2", "target": "sd/fast", "stream": false, "ok": true, "note": "ok (2 calls, 0.1s)"}
+{"scenario": "T3", "target": "std/normal", "stream": true, "ok": false, "note": "finish_reason=stop (expected tool_calls)"}
+{"scenario": "T3", "target": "std/normal", "stream": false, "ok": false, "note": "finish_reason=stop (expected tool_calls)"}
+{"scenario": "T3", "target": "std/fast", "stream": true, "ok": false, "note": "finish_reason=stop (expected tool_calls)"}
+{"scenario": "T3", "target": "std/fast", "stream": false, "ok": false, "note": "expected tool ['get_time'], got ['get_weather']"}
+{"scenario": "T3", "target": "sd/normal", "stream": true, "ok": false, "note": "finish_reason=stop (expected tool_calls)"}
+{"scenario": "T3", "target": "sd/normal", "stream": false, "ok": false, "note": "finish_reason=stop (expected tool_calls)"}
+{"scenario": "T3", "target": "sd/fast", "stream": true, "ok": false, "note": "finish_reason=stop (expected tool_calls)"}
+{"scenario": "T3", "target": "sd/fast", "stream": false, "ok": false, "note": "expected tool ['get_time'], got ['get_weather', 'get_weather']; finish_reason=stop (expected tool_calls)"}
+{"scenario": "T4", "target": "std/normal", "stream": true, "ok": true, "note": "ok (3 calls, 5.5s)"}
+{"scenario": "T4", "target": "std/normal", "stream": false, "ok": true, "note": "ok (3 calls, 1.5s)"}
+{"scenario": "T4", "target": "std/fast", "stream": true, "ok": true, "note": "ok (3 calls, 6.3s)"}
+{"scenario": "T4", "target": "std/fast", "stream": false, "ok": true, "note": "ok (3 calls, 0.4s)"}
+{"scenario": "T4", "target": "sd/normal", "stream": true, "ok": true, "note": "ok (3 calls, 0.0s)"}
+{"scenario": "T4", "target": "sd/normal", "stream": false, "ok": true, "note": "ok (3 calls, 0.1s)"}
+{"scenario": "T4", "target": "sd/fast", "stream": true, "ok": true, "note": "ok (3 calls, 6.0s)"}
+{"scenario": "T4", "target": "sd/fast", "stream": false, "ok": true, "note": "ok (3 calls, 0.0s)"}
+{"scenario": "T5", "target": "std/normal", "stream": true, "ok": true, "note": "final answer after 2 turns (The weather in Paris is sunny at 18°C, and the cur)"}
+{"scenario": "T5", "target": "std/normal", "stream": false, "ok": true, "note": "final answer after 2 turns (The weather in Paris is sunny at 18°C, and the cur)"}
+{"scenario": "T5", "target": "std/fast", "stream": true, "ok": false, "note": "no final answer within 4 turns"}
+{"scenario": "T5", "target": "std/fast", "stream": false, "ok": true, "note": "final answer after 2 turns (The weather in Paris is sunny with a temperature o)"}
+{"scenario": "T5", "target": "sd/normal", "stream": true, "ok": true, "note": "final answer after 2 turns (The weather in Paris is sunny at 18°C, and the cur)"}
+{"scenario": "T5", "target": "sd/normal", "stream": false, "ok": true, "note": "final answer after 2 turns (The weather in Paris is sunny at 18°C, and the cur)"}
+{"scenario": "T5", "target": "sd/fast", "stream": true, "ok": false, "note": "no final answer within 4 turns"}
+{"scenario": "T5", "target": "sd/fast", "stream": false, "ok": true, "note": "final answer after 2 turns (The weather in Paris is sunny with a temperature o)"}
+{"scenario": "R1", "target": "std/normal", "stream": true, "ok": true, "note": "json object returned"}
+{"scenario": "R1", "target": "std/normal", "stream": false, "ok": true, "note": "json object returned"}
+{"scenario": "R1", "target": "std/fast", "stream": true, "ok": true, "note": "json object returned"}
+{"scenario": "R1", "target": "std/fast", "stream": false, "ok": true, "note": "json object returned"}
+{"scenario": "R1", "target": "sd/normal", "stream": true, "ok": true, "note": "json object returned"}
+{"scenario": "R1", "target": "sd/normal", "stream": false, "ok": true, "note": "json object returned"}
+{"scenario": "R1", "target": "sd/fast", "stream": true, "ok": true, "note": "json object returned"}
+{"scenario": "R1", "target": "sd/fast", "stream": false, "ok": true, "note": "json object returned"}
+{"scenario": "R2", "target": "std/normal", "stream": true, "ok": true, "note": "schema keys ['city', 'population_millions']"}
+{"scenario": "R2", "target": "std/normal", "stream": false, "ok": true, "note": "schema keys ['city', 'population_millions']"}
+{"scenario": "R2", "target": "std/fast", "stream": true, "ok": true, "note": "schema keys ['city', 'population_millions']"}
+{"scenario": "R2", "target": "std/fast", "stream": false, "ok": true, "note": "schema keys ['city', 'population_millions']"}
+{"scenario": "R2", "target": "sd/normal", "stream": true, "ok": true, "note": "schema keys ['city', 'population_millions']"}
+{"scenario": "R2", "target": "sd/normal", "stream": false, "ok": true, "note": "schema keys ['city', 'population_millions']"}
+{"scenario": "R2", "target": "sd/fast", "stream": true, "ok": true, "note": "schema keys ['city', 'population_millions']"}
+{"scenario": "R2", "target": "sd/fast", "stream": false, "ok": true, "note": "schema keys ['city', 'population_millions']"}
+{"scenario": "P1", "target": "std/normal", "stream": true, "ok": true, "note": "content='1, 2, 3, 4, ' finish=stop"}
+{"scenario": "P1", "target": "std/normal", "stream": false, "ok": true, "note": "content='1, 2, 3, 4, ' finish=stop"}
+{"scenario": "P1", "target": "std/fast", "stream": true, "ok": true, "note": "content='1, 2, 3, 4, ' finish=stop"}
+{"scenario": "P1", "target": "std/fast", "stream": false, "ok": true, "note": "content='1, 2, 3, 4, ' finish=stop"}
+{"scenario": "P1", "target": "sd/normal", "stream": true, "ok": true, "note": "content='1, 2, 3, 4, ' finish=stop"}
+{"scenario": "P1", "target": "sd/normal", "stream": false, "ok": true, "note": "content='1, 2, 3, 4, ' finish=stop"}
+{"scenario": "P1", "target": "sd/fast", "stream": true, "ok": true, "note": "content='1, 2, 3, 4, ' finish=stop"}
+{"scenario": "P1", "target": "sd/fast", "stream": false, "ok": true, "note": "content='1, 2, 3, 4, ' finish=stop"}
+{"scenario": "P2", "target": "std/normal", "stream": true, "ok": false, "note": "finish=length completion_tokens=64 content_len=263 reasoning_len=0"}
+{"scenario": "P2", "target": "std/normal", "stream": false, "ok": false, "note": "finish=length completion_tokens=64 content_len=250 reasoning_len=0"}
+{"scenario": "P2", "target": "std/fast", "stream": true, "ok": false, "note": "finish=length completion_tokens=64 content_len=254 reasoning_len=0"}
+{"scenario": "P2", "target": "std/fast", "stream": false, "ok": false, "note": "finish=length completion_tokens=64 content_len=250 reasoning_len=0"}
+{"scenario": "P2", "target": "sd/normal", "stream": true, "ok": false, "note": "finish=length completion_tokens=64 content_len=263 reasoning_len=0"}
+{"scenario": "P2", "target": "sd/normal", "stream": false, "ok": false, "note": "finish=length completion_tokens=64 content_len=263 reasoning_len=0"}
+{"scenario": "P2", "target": "sd/fast", "stream": true, "ok": false, "note": "finish=length completion_tokens=64 content_len=268 reasoning_len=0"}
+{"scenario": "P2", "target": "sd/fast", "stream": false, "ok": false, "note": "finish=length completion_tokens=64 content_len=254 reasoning_len=0"}
+{"scenario": "P3", "target": "std/normal", "stream": true, "ok": false, "note": "completion_tokens=64 finish=length"}
+{"scenario": "P3", "target": "std/normal", "stream": false, "ok": false, "note": "completion_tokens=64 finish=length"}
+{"scenario": "P3", "target": "std/fast", "stream": true, "ok": false, "note": "completion_tokens=64 finish=length"}
+{"scenario": "P3", "target": "std/fast", "stream": false, "ok": false, "note": "completion_tokens=64 finish=length"}
+{"scenario": "P3", "target": "sd/normal", "stream": true, "ok": false, "note": "completion_tokens=64 finish=length"}
+{"scenario": "P3", "target": "sd/normal", "stream": false, "ok": false, "note": "completion_tokens=64 finish=length"}
+{"scenario": "P3", "target": "sd/fast", "stream": true, "ok": false, "note": "completion_tokens=64 finish=length"}
+{"scenario": "P3", "target": "sd/fast", "stream": false, "ok": false, "note": "completion_tokens=64 finish=length"}
+{"scenario": "P4", "target": "std/normal", "stream": true, "ok": true, "note": "ok"}
+{"scenario": "P4", "target": "std/normal", "stream": false, "ok": true, "note": "ok"}
+{"scenario": "P4", "target": "std/fast", "stream": true, "ok": true, "note": "ok"}
+{"scenario": "P4", "target": "std/fast", "stream": false, "ok": true, "note": "ok"}
+{"scenario": "P4", "target": "sd/normal", "stream": true, "ok": true, "note": "ok"}
+{"scenario": "P4", "target": "sd/normal", "stream": false, "ok": true, "note": "ok"}
+{"scenario": "P4", "target": "sd/fast", "stream": true, "ok": true, "note": "ok"}
+{"scenario": "P4", "target": "sd/fast", "stream": false, "ok": true, "note": "ok"}
+{"scenario": "P5", "target": "std/normal", "stream": true, "ok": true, "note": "content=\"Arr, 'tis 4, matey! Arr.Arr, the sum be 4, ye scal\""}
+{"scenario": "P5", "target": "std/normal", "stream": false, "ok": true, "note": "content=\"Arr, 'tis 4! Smart as a cannonball, that be. 🏴\\u200d☠️⚓\""}
+{"scenario": "P5", "target": "std/fast", "stream": true, "ok": true, "note": "content='Arr, that be a simple sum for a scallywag like mes'"}
+{"scenario": "P5", "target": "std/fast", "stream": false, "ok": true, "note": "content='Arr, that be a simple sum for a scallywag like mes'"}
+{"scenario": "P5", "target": "sd/normal", "stream": true, "ok": true, "note": "content=\"Arr, 'tis 4, matey! Arr.Arr, the sum be 4, ye scal\""}
+{"scenario": "P5", "target": "sd/normal", "stream": false, "ok": true, "note": "content=\"Arr, 'tis 4, matey! Arr.Arr, the sum be 4, ye scal\""}
+{"scenario": "P5", "target": "sd/fast", "stream": true, "ok": true, "note": "content='Arr, that be a simple sum for a scallywag like mes'"}
+{"scenario": "P5", "target": "sd/fast", "stream": false, "ok": true, "note": "content='Arr, that be a simple sum for a scallywag like mes'"}
+{"scenario": "P6", "target": "std/normal", "stream": true, "ok": true, "note": "accepted; same seed -> same ('753849753849' vs '753849753849')"}
+{"scenario": "P6", "target": "std/normal", "stream": false, "ok": true, "note": "accepted; same seed -> same ('731492731492' vs '731492731492')"}
+{"scenario": "P6", "target": "std/fast", "stream": true, "ok": true, "note": "accepted; same seed -> same ('384729\\u200b\\u200b\\u200b\\u200b\\u200b\\u200b' vs '384729\\u200b\\u200b\\u200b\\u200b\\u200b\\u200b')"}
+{"scenario": "P6", "target": "std/fast", "stream": false, "ok": true, "note": "accepted; same seed -> same ('384729.4821*' vs '384729.4821*')"}
+{"scenario": "P6", "target": "sd/normal", "stream": true, "ok": true, "note": "accepted; same seed -> same ('753849753849' vs '753849753849')"}
+{"scenario": "P6", "target": "sd/normal", "stream": false, "ok": true, "note": "accepted; same seed -> same ('753849753849' vs '753849753849')"}
+{"scenario": "P6", "target": "sd/fast", "stream": true, "ok": true, "note": "accepted; same seed -> same ('384729\\u200b\\u200b\\u200b\\u200b\\u200b\\u200b' vs '384729\\u200b\\u200b\\u200b\\u200b\\u200b\\u200b')"}
+{"scenario": "P6", "target": "sd/fast", "stream": false, "ok": true, "note": "accepted; same seed -> same ('384729\\u200b\\u200b\\u200b\\u200b\\u200b\\u200b' vs '384729\\u200b\\u200b\\u200b\\u200b\\u200b\\u200b')"}
+{"scenario": "P7", "target": "std/normal", "stream": true, "ok": true, "note": "explicit error HTTP 400 {\"error\":{\"code\":\"unsupported_parameter\",\"message\":\"n greater than 1 is not supported: the upstream providers return a s"}
+{"scenario": "P7", "target": "std/normal", "stream": false, "ok": true, "note": "explicit error HTTP 400 {\"error\":{\"code\":\"unsupported_parameter\",\"message\":\"n greater than 1 is not supported: the upstream providers return a s"}
+{"scenario": "P7", "target": "std/fast", "stream": true, "ok": true, "note": "explicit error HTTP 400 {\"error\":{\"code\":\"unsupported_parameter\",\"message\":\"n greater than 1 is not supported: the upstream providers return a s"}
+{"scenario": "P7", "target": "std/fast", "stream": false, "ok": true, "note": "explicit error HTTP 400 {\"error\":{\"code\":\"unsupported_parameter\",\"message\":\"n greater than 1 is not supported: the upstream providers return a s"}
+{"scenario": "P7", "target": "sd/normal", "stream": true, "ok": true, "note": "explicit error HTTP 400 {\"error\":{\"code\":\"unsupported_parameter\",\"message\":\"n greater than 1 is not supported: the upstream providers return a s"}
+{"scenario": "P7", "target": "sd/normal", "stream": false, "ok": true, "note": "explicit error HTTP 400 {\"error\":{\"code\":\"unsupported_parameter\",\"message\":\"n greater than 1 is not supported: the upstream providers return a s"}
+{"scenario": "P7", "target": "sd/fast", "stream": true, "ok": true, "note": "explicit error HTTP 400 {\"error\":{\"code\":\"unsupported_parameter\",\"message\":\"n greater than 1 is not supported: the upstream providers return a s"}
+{"scenario": "P7", "target": "sd/fast", "stream": false, "ok": true, "note": "explicit error HTTP 400 {\"error\":{\"code\":\"unsupported_parameter\",\"message\":\"n greater than 1 is not supported: the upstream providers return a s"}
+{"scenario": "P8", "target": "std/normal", "stream": true, "ok": true, "note": "logprobs present"}
+{"scenario": "P8", "target": "std/normal", "stream": false, "ok": false, "note": "logprobs requested, none returned (silently ignored)"}
+{"scenario": "P8", "target": "std/fast", "stream": true, "ok": true, "note": "logprobs present"}
+{"scenario": "P8", "target": "std/fast", "stream": false, "ok": false, "note": "logprobs requested, none returned (silently ignored)"}
+{"scenario": "P8", "target": "sd/normal", "stream": true, "ok": true, "note": "logprobs present"}
+{"scenario": "P8", "target": "sd/normal", "stream": false, "ok": true, "note": "logprobs present"}
+{"scenario": "P8", "target": "sd/fast", "stream": true, "ok": true, "note": "logprobs present"}
+{"scenario": "P8", "target": "sd/fast", "stream": false, "ok": false, "note": "logprobs requested, none returned (silently ignored)"}

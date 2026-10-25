@@ -1,3 +1,20 @@
+# Current figures: version R1, 24-hour test (2026-10-23 20:00 to 2026-10-24 19:59, UTC-7)
+
+Synthetic set of five request classes (short stream, short non-stream, ~20k-token long context, JSON mode, tool calls), unique prompt every time, no external incident window opened, nothing excluded. Providers are anonymised. One 24-hour window is a measurement of that day, not a promise; the 99th percentile is an estimate from one daily cycle. Web page: https://api.privatedeskai.com/benchmarks
+
+| Line | Served | First text median / p95 / p99 (estimate) |
+|---|---|---|
+| Standard | 99.937 % (4769 of 4772), Wilson 95 % [99.815, 99.979] | 1422 ms / 7746 ms / 9530 ms |
+| Super Deal (economical tariff, depends on the Gonka network, no insurance outside Gonka) | 98.822 % (4782 of 4839), Wilson 95 % [98.477, 99.09] | 1427 ms / 6896 ms / 12614 ms |
+
+Gateway against calling the provider directly, same request at the same moment (300 pairs per line): Standard 300 of 300 against 300 of 300; Super Deal 297 of 300 against 300 of 300 (not significant, p = 0.25). In this window the provider itself was healthy.
+
+Everything needed to recompute the figures is in [`2026-10-24-R1-24h/`](2026-10-24-R1-24h/) (`python3 analyze.py main_requests.csv`).
+
+> **The sections below are OUTDATED (older gateway versions, September 2026).** Their time-to-first-token medians (as low as a few milliseconds) were helped by response caching of repeated prompts; provider names in them are historical. They are kept, dated, and not edited.
+
+---
+
 # SAGG gateway reliability benchmarks
 
 Raw data, methodology, and reproduction scripts behind two real benchmark

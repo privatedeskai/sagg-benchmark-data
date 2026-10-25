@@ -1,3 +1,5 @@
+> **OUTDATED - read this first.** This document describes an older gateway version measured in September 2026. The current figures (version R1, 24 hours, 2026-10-23/24) are in `2026-10-24-R1-24h/` and in the top-level README. Time-to-first-token medians here include a response-cache effect. Provider names below are historical. Kept as published, dated, not edited.
+
 # 2026-09-30 recheck: 200 requests per line, two weeks after the 1,000/line baseline
 
 **This is a short confirmation check, not a new large-sample measurement.** Its purpose was narrow: verify the [`2026-09-18-1000-per-line/`](../2026-09-18-1000-per-line/) baseline (100.0%/98.9%) still held two weeks later, given real changes on the Gonka network in the interim (new models observed: GLM-5.3-Flash, MiniMax-M2.7). At n=200/line this does not carry the same statistical weight as the 1,000-request baseline - read it as "still consistent with," not as a replacement measurement.
