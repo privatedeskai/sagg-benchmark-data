@@ -116,7 +116,7 @@ window - see below.
   request-level records) and the full generated report with a per-pair
   incident log.
 - **`provider_benchmark/`** - 100 direct (non-gateway) requests, 25 per
-  provider (four providers; names are kept in the raw data files only), with latency percentiles and
+  provider (four providers; their names appear only in the dated September documents and raw data files), with latency percentiles and
   failure breakdowns per provider.
 - **`traces/`** - four real, raw JSON traces from SAGG's own per-request
   tracing tool, each showing the exact chronology (timestamp + outcome)
