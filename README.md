@@ -11,6 +11,8 @@ Gateway against calling the provider directly, same request at the same moment (
 
 Everything needed to recompute the figures is in [`2026-10-24-R1-24h/`](2026-10-24-R1-24h/) (`python3 analyze.py main_requests.csv`).
 
+**Contact:** support@privatedeskai.com (see https://api.privatedeskai.com/support). Method, limits and the live page: https://api.privatedeskai.com/benchmarks. Nothing in this repository is a service-level commitment; one test is a measurement of that period and version.
+
 > **The sections below are OUTDATED (older gateway versions, September 2026).** Their time-to-first-token medians (as low as a few milliseconds) were helped by response caching of repeated prompts; provider names in them are historical. They are kept, dated, and not edited.
 
 ---
@@ -21,7 +23,7 @@ Raw data, methodology, and reproduction scripts behind two real benchmark
 campaigns run against [SAGG](https://api.privatedeskai.com), an LLM
 inference gateway that fronts several providers on the
 [Gonka](https://gonka.ai) decentralized inference network plus one
-centralized fallback (DeepInfra), with automatic failover between them.
+centralized fallback provider outside that network, with automatic failover between them.
 
 Everything in this repo is real, measured data - no numbers here are
 projected, simulated, or smoothed. Where a result was noisy or a finding
@@ -34,7 +36,7 @@ baseline, given real changes on the Gonka network in the interim, is in
 [`2026-09-30-recheck-200-per-line/`](2026-09-30-recheck-200-per-line/):
 **Standard 199/200 (99.5%)**, **Super Deal 198/200 (99.0%)** - success
 rate still consistent with the baseline. One honestly disclosed finding,
-not smoothed over: Standard's Primary-tier (`joingonka-deepseek`) share
+not smoothed over: Standard's first-tier provider's share
 dropped to **80.4%** (from 94.5% on 2026-09-18), traced to a real,
 if not severe, uptick in connection-level timeouts to that provider that
 day - the cascade's backup tiers absorbed it correctly, overall success
@@ -49,8 +51,8 @@ date - **1,000 real sequential requests per line**, measured after this
 session's own connection-pooling fix and a Tier1 provider recovery, is in
 [`2026-09-18-1000-per-line/`](2026-09-18-1000-per-line/): **Standard
 1,000/1,000 (100.0%)**, **Super Deal 989/1,000 (98.9%)**, median
-time-to-first-token 197ms/216ms. This is the number quoted first on
-the public `/benchmarks` page. See that folder's own README for the full
+time-to-first-token 197ms/216ms. This was the headline figure of the older
+version; the current `/benchmarks` page shows the R1 figures at the top. See that folder's own README for the full
 methodology (three separate clean-condition windows pooled together, no
 paired direct-comparison leg this time, and an honestly disclosed
 network-origin nuance for one of the three windows).
@@ -69,7 +71,7 @@ methodology difference and two disclosed findings from that run.
 ## Headline result (Phase 3, 2026-09-03/05 - historical baseline)
 
 Over 1,440 paired requests (same prompt, same instant, one request sent
-directly to `proxygonka-deepseek`, one sent through the SAGG gateway),
+directly to the first provider of the line, one sent through the SAGG gateway),
 the gateway's automatic failover measurably reduced end-to-end failures:
 
 | | direct failure rate | gateway failure rate | requests saved | McNemar's exact p |
@@ -114,8 +116,7 @@ window - see below.
   request-level records) and the full generated report with a per-pair
   incident log.
 - **`provider_benchmark/`** - 100 direct (non-gateway) requests, 25 per
-  provider (`proxygonka-deepseek`, `gonkaapiorg-deepseek`,
-  `eterial-deepseek`, `deepinfra-deepseek`), with latency percentiles and
+  provider (four providers; names are kept in the raw data files only), with latency percentiles and
   failure breakdowns per provider.
 - **`traces/`** - four real, raw JSON traces from SAGG's own per-request
   tracing tool, each showing the exact chronology (timestamp + outcome)
