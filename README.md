@@ -21,9 +21,8 @@ Everything needed to recompute the figures is in [`2026-10-24-R1-24h/`](2026-10-
 
 Raw data, methodology, and reproduction scripts behind two real benchmark
 campaigns run against [SAGG](https://api.privatedeskai.com), an LLM
-inference gateway that fronts several providers on the
-[Gonka](https://gonka.ai) decentralized inference network plus one
-centralized fallback provider outside that network, with automatic failover between them.
+inference gateway that routes each request across up to three independent providers in a fixed order, with automatic failover. On both lines the first two providers are on the
+[Gonka](https://gonka.ai) decentralized inference network; the third is a provider outside that network on the Standard line and a Gonka-network provider on the Super Deal line.
 
 Everything in this repo is real, measured data - no numbers here are
 projected, simulated, or smoothed. Where a result was noisy or a finding
